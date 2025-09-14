@@ -425,9 +425,13 @@ class Terminal {
                 verifyClient: info => {
                     if (this.wss.clients.length >= 1) {
                         return false;
-                    } else {
-                        return true;
                     }
+                    const origin = info.req.headers.origin;
+                    if (origin && !origin.startsWith("file://")) {
+                        console.log(`Rejecting connection from origin: ${origin}`);
+                        return false;
+                    }
+                    return true;
                 }
             });
             this.Ipc.on("terminal_channel-"+this.port, (e, ...args) => {
