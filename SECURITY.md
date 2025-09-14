@@ -1,11 +1,27 @@
+
 # Security Policy
+This document outlines the security policy for the eDEX-UI-security-patched fork.
 
-## Supported Versions
+### Supported Versions
+This is a community-maintained fork of an archived project. Security patches and support are provided on a best-effort basis for the latest version on the main branch of this repository. The original, archived versions of eDEX-UI are not supported and contain known vulnerabilities.
+|Version|Supported|
+|--|--|
+|Latest Main Commit  | :white_check_mark: |
+|Original Releases| :x: |
 
-We support the [latest released version](https://github.com/GitSquared/edex-ui/releases/latest), and the current development version (`master` branch).
+### Reporting a Vulnerability
+I take all security reports seriously. If you discover a security vulnerability, please use one of the following methods to report it:
 
-## Reporting a Vulnerability
+GitHub Private Vulnerability Reporting: The preferred method is to privately report the vulnerability directly on this GitHub repository. This ensures the issue is disclosed responsibly. Click on the "Security" tab and then "Report a vulnerability."
 
-If you're concerned about a potential or proven security vulnerability in this software, please get in touch by sending an email at [`gabriel@saillard.dev`](mailto:%22Gabriel%20SAILLARD%22%20%3Cgabriel%40saillard.dev%3E?subject=%5BSECURITY%5D%20eDEX-UI%20vulnerability%20concern&body=(Please%20describe%20what%20code%20you%20think%20is%20vulnerable%2C%20and%20provide%20a%20way%20to%20reproduce%20the%20issue%20if%20possible)).
+Create a GitHub Issue: If you are unable to report privately, you can open an issue in the repository. Please do not include sensitive details, proof-of-concept exploits, or any information that could be used to harm others in a public issue. Describe the nature of the vulnerability, and I will create a private channel to discuss the details.
 
-If your email subject contains the `[SECURITY]` tag, you will be surfaced to the front of my inbox and should expect a response in 24 hours or less. The link above will set you up with a subject template.
+When reporting, please include as much information as possible, such as:
+
+A description of the vulnerability and its potential impact.
+
+Steps to reproduce the issue.
+
+The version of the software you are using.
+
+You can expect an acknowledgment of your report within 48 hours. I am committed to working with you to understand and resolve the issue in a timely manner.
