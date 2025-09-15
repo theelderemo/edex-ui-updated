@@ -1,4 +1,5 @@
 
+
 <p align="center">
   <br>
   <img alt="Logo" src="media/logo.png">
@@ -31,36 +32,92 @@ This fork implements proper origin validation for WebSocket connections:
 
 This is a fork of the original eDEX-UI, which is no longer actively maintained. While this fork addresses a critical security vulnerability, it should be considered a work in progress. Community contributions are welcome to help revive and improve the project. Please use this software "as-is" and take appropriate security measures when running any terminal emulator with network capabilities.
 
+
 # Installation
 
+## Pre-built Binaries
+
+⚠️ **Note: Pre-built binaries from the original repository contain the vulnerability. Only use builds from this fork or build from source.**
+
+Head over to releases and download the correct prebuild
+
 ## Building from Source (Recommended for Security)
-Since this is a security-focused fork, building from source is the recommended way to ensure you have the patched version.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/](https://github.com/)[YOUR-USERNAME]/eDEX-UI-security-patched.git
+Due to the project's age, the build process has specific version requirements. Following these steps carefully is recommended to ensure you have a working, patched version.
+
+### 1. Environment Setup (Linux/Ubuntu)
+
+The build process is sensitive to Node.js and Python versions.
+
+-   **Install `nvm` (Node Version Manager):** This is the best way to manage Node.js versions.
+    
+    
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    source ~/.bashrc
+    
+    ```
+    
+-   **Install and Use Node.js v16:** This project requires Node.js v16 to compile its native dependencies.
+    
+    
+    
+    ```
+    nvm install 16
+    nvm use 16
+    
+    ```
+    
+-   **Install Python 3.10:** The build scripts require a specific Python version.
+    
+    
+    ```
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install -y python3.10
+    
+    ```
+    
+-   **Install Build Tools:**
+    
+    
+    
+    ```
+    sudo apt install -y build-essential git
+    
+    ```
+    
+
+### 2. Clone and Build the Application
+
+Now, with the correct environment set up, you can clone and build the project.
+
+-   **Clone  repository:**
+    
+    
+    ```
+    git clone https://github.com/theelderemo/eDEX-UI-security-patched.git
     cd eDEX-UI-security-patched
+    
     ```
-
-2.  **Install dependencies and build the application for your operating system:**
-
-    **Linux/macOS:**
-    ```bash
-    npm run install-linux # or install-darwin for macOS
-    npm run build-linux  # or build-darwin for macOS
+    
+-   **Install dependencies:** This command uses the specific versions of Node and Python you just installed.
+        
     ```
-
-    **Windows (run as Administrator):**
-    ```bash
-    npm run install-windows
-    npm run build-windows
+    npm_config_python=/usr/bin/python3.10 npm run install-linux
+    
     ```
+    
+-   **Build the binary:**
+        
+    ```
+    npm run build-linux
+    
+    ```
+    
 
-### Pre-built Binaries
+After the build completes, you will find the installable `.AppImage` and `.deb` files in the `dist/` directory.
 
-⚠️ **Note:** Pre-built binaries from the original repository contain the vulnerability. Only use builds from this fork or build from source.
-
----
 
 # Contributing
 
